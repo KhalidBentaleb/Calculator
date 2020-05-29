@@ -1,0 +1,92 @@
+﻿<html>
+<head>
+<title>Calculator</title>
+</head>
+<script language="javascript">
+function Ajouter(caracteres){ 
+          window.document.formulaire.zone.value =
+          window.document.formulaire.zone.value + caracteres; }
+function taches(fonction){
+                        if(fonction=="Rac"){ var x;
+                          x=eval(window.document.formulaire.zone.value); 
+                          window.document.formulaire.zone.value=Math.sqrt(x);}
+			          if(fonction=="inverse") {var x;
+                       x=eval(1/window.document.formulaire.zone.value); 
+                       window.document.formulaire.zone.value=x;}
+		             if(fonction=="pourcentage") {var x;
+                       x=eval(window.document.formulaire.zone.value/100); 
+                      window.document.formulaire.zone.value=x;}}
+ function history(){  if(window.document.formulaire.zone.value=="")
+			                      {alert(" Entrer des nombres d'abord");}							 
+							else { var a=window.document.formulaire.zone.value.length;
+								  var b=a;
+								  var c=1;
+								  var d=eval(b-c);
+						  var e=window.document.formulaire.zone.value.substring(0,d);
+								  window.document.formulaire.zone.value=e; } }  
+function Effacer(){ 
+							  var g="";
+                      window.document.formulaire.zone.value=g;
+	              }
+			 	 
+function signe(){ var f=window.document.formulaire.zone.value
+	window.document.formulaire.zone.value=-+window.document.formulaire.zone.value }
+ function resultat(){ var x;
+                  x=eval(window.document.formulaire.zone.value);
+                  window.document.formulaire.zone.value=x;}
+</script>
+<body >
+<center><form name="formulaire">
+<table border=0 bgcolor="#C0C0C0">
+<tr>
+<td colspan=6 align=center>
+<input type=text  name="zone"  size=36 style="text-align:right" >
+</td>
+</tr>
+<tr>
+<td> <input type=button  value="" style="width:44px"></td>
+<td ><input type=button value="Retour arrière" style="width:90" Onclick="history()"></td>
+<td ><input type=button value="CE" style="width:74px" onClick="Effacer()" >
+<input type=button value="C" style="width:68px" onClick="Effacer()"></td>
+</tr>
+<table  border=0 bgcolor="#C0C0C0">
+<tr style="width:36px">
+<td align=right> <input type=button  value= "MC"style="width:44px" ></td>
+<td><input type=button value="7" style="width:44px" OnClick="Ajouter('7')"></td>
+<td> <input type=button  value= "8" style="width:44px" OnClick="Ajouter('8')"></td>
+<td><input type=button value="9" style="width:44px" OnClick="Ajouter('9')"></td>
+<td><input type=button value="/"style="width:44px"  OnClick="Ajouter('/')"></td>
+<td><input type=button value="Rac " style="width:44px" OnClick="taches('Rac')"></td>
+</tr>
+<tr>
+<td> <input type=button  value= "MR"style="width:45px" Onclick="Ajouter('')"></td>
+<td><input type=button value="4" style="width:45px" Onclick="Ajouter('4')"></td>
+<td> <input type=button  value= "5" style="width:45px" Onclick="Ajouter('5')"></td>
+<td><input type=button value="6" style="width:45px" Onclick="Ajouter('6')"></td>
+<td><input type=button value="*"style="width:45px" Onclick="Ajouter('*')"></td>
+<td><input type=button value="%" style="width:45px" Onclick="taches('pourcentage')"></td>
+</tr>
+<tr>
+<td> <input type=button  value= "MS"style="width:45px" Onclick="f('')"></td>
+<td><input type=button value="1" style="width:45px" Onclick="Ajouter('1')"></td>
+<td> <input type=button  value= "2" style="width:45px" Onclick="Ajouter('2')"></td>
+<td><input type=button value="3" style="width:45px" Onclick="Ajouter('3')"></td>
+<td><input type=button value="-"style="width:45px" Onclick="Ajouter('-')"></td>
+<td><input type=button value="1/x" style="width:45px" Onclick="taches('inverse')"></td>
+</tr>
+<tr>
+<td> <input type=button  value= "M+"style="width:45px" Onclick="Ajouter('')"></td>
+<td><input type=button value="0" style="width:45px" Onclick="Ajouter('0')"></td>
+<td> <input type=button  value= "+/-" style="width:45px" Onclick="signe()"></td>
+<td><input type=button value="." style="width:45px" Onclick="Ajouter('.')"></td>
+<td><input type=button value="+"style="width:45px" Onclick="Ajouter('+')"></td>
+<td><input type=button value="=" style="width:45px"	Onclick="resultat()"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+<center>
+</body>
+</html>
